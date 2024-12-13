@@ -1,0 +1,75 @@
+# About the Project
+
+## What is this Code?
+This project is a **Support Management System API** built using **FastAPI** and **PostgreSQL**. It provides CRUD operations and relationships for managing:
+1. **Support Price**: Defines pricing details with fields like amount, name, and description.
+2. **Support Purpose**: Represents the purpose of operations, with fields such as name and description.
+3. **Support Category**: Categories related to purposes, containing fields like name, description, and active status.
+
+### Key Features:
+- **Assign multiple categories to a purpose.**
+- **Assign multiple prices to a category.**
+- **Relationship management** between support purposes, categories, and prices.
+- RESTful API endpoints for CRUD operations and relational queries.
+
+This project is ideal for scenarios where structured relationships and hierarchical data need to be managed efficiently.
+
+---
+
+## How to Install this Code
+
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository_url>
+   cd <repository_name>
+   ```
+
+2. **Create a Virtual Environment:**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. **Install Dependencies:**
+   Ensure `pip` is up to date and install the required libraries.
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+
+4. **Set Up the Database:**
+   - Install **PostgreSQL** if it’s not already installed.
+   - Create a database and note down the connection details.
+   - Create a `.env` file in the root directory and set the `DATABASE_URL`:
+     ```
+     DATABASE_URL=postgresql://<username>:<password>@<host>:<port>/<database_name>
+     ```
+
+5. **Initialize the Database:**
+   Run the database initialization script to create the required tables.
+   ```bash
+   python -c "from app.database import init_db; init_db()"
+   ```
+
+---
+
+## How to Run it on Localhost
+
+1. **Run the Application:**
+   Start the FastAPI application using Uvicorn.
+   ```bash
+   uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+   ```
+
+2. **Access the API:**
+   Open your web browser and navigate to:
+   - **Swagger UI:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+   - **ReDoc:** [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+3. **Test the Endpoints:**
+   Use the Swagger UI, Postman, or cURL to test the API endpoints.
+
+---
+
+This project is now ready to be deployed or used for development purposes!
+
